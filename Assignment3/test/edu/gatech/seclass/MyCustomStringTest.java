@@ -39,32 +39,32 @@ public class MyCustomStringTest {
 
     @Test
     public void testCountDuplicates2() {
-        
-        fail("Not yet implemented");
+        mycustomstring.setString("");
+        assertEquals(0, mycustomstring.countDuplicates());
     }
 
     @Test
     public void testCountDuplicates3() {
-        
-        fail("Not yet implemented");
+        mycustomstring.setString("Billy has 111 apples");
+        assertEquals(4, mycustomstring.countDuplicates());
     }
 
     @Test
     public void testCountDuplicates4() {
-        
-        fail("Not yet implemented");
+       mycustomstring.setString("        ");
+       assertEquals(7, mycustomstring.countDuplicates());
     }
 
     @Test
     public void testCountDuplicates5() {
-        
-        fail("Not yet implemented");
+        //mycustomstring.setString(null);
+        assertEquals(0, mycustomstring.countDuplicates());
     }
 
     @Test
     public void testCountDuplicates6() {
-        
-        fail("Not yet implemented");
+        mycustomstring.setString("%@&!^#(!!&$)**!)*");
+        assertEquals(2, mycustomstring.countDuplicates());
     }
 
     //Test Purpose: This is the second instructor example test.
@@ -83,64 +83,63 @@ public class MyCustomStringTest {
 
     @Test
     public void testAddDigits3() {
-        
-        fail("Not yet implemented");
+        mycustomstring.setString("hello 90, bye 2");
+        assertEquals("hello 78, bye 0", mycustomstring.addDigits(2, false));
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void testAddDigits4() {
-
-        fail("Not yet implemented");
+        mycustomstring.setString(null);
+        assertEquals(NullPointerException.class, mycustomstring.addDigits(4, false));
     }
 
     @Test
     public void testAddDigits5() {
-
-        fail("Not yet implemented");
+        mycustomstring.setString("");
+        assertEquals("", mycustomstring.addDigits(2, true));
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddDigits6() {
-
-        fail("Not yet implemented");
+        mycustomstring.setString("This is when n > 9");
+        assertEquals(IllegalArgumentException.class, mycustomstring.addDigits(15, true));
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddDigits7() {
-        
-        fail("Not yet implemented");
+        mycustomstring.setString("This is when n <= 0");
+        assertEquals(IllegalArgumentException.class, mycustomstring.addDigits(-4, true));
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddDigits8() {
-        
-        fail("Not yet implemented");
+        mycustomstring.setString("This is when n <= 0");
+        assertEquals(IllegalArgumentException.class, mycustomstring.addDigits(0, true));
     }
 
     @Test
     public void testAddDigits9() {
-        
-        fail("Not yet implemented");
+        mycustomstring.setString("      123      ");
+        assertEquals("      901      ", mycustomstring.addDigits(8, true));
     }
 
     @Test
     public void testAddDigits10() {
-        
-        fail("Not yet implemented");
+        mycustomstring.setString("Yes, 12 apples + 3 bananas");
+        assertEquals("Yes, 89 apples + 0 bananas", mycustomstring.addDigits(3, false));
     }
 
     @Test
     public void testAddDigits11() {
-        
-        fail("Not yet implemented");
+        mycustomstring.setString("94759302764638");
+        assertEquals("83648291653527", mycustomstring.addDigits(9, true));
     }
 
     @Test
     public void testAddDigits12() {
-        
-        fail("Not yet implemented");
+        mycustomstring.setString("94759302764638");
+        assertEquals("83648291653527", mycustomstring.addDigits(1, false));
     }
-
 
     //Test Purpose: This is the fourth instructor example test.
     @Test
@@ -149,7 +148,7 @@ public class MyCustomStringTest {
         mycustomstring.flipLetttersInSubstring(18, 30);
         assertEquals("H3y, l3t'5 put 50ni s161tD em this 5tr1n6!11!!", mycustomstring.getString());
     }
-
+/**
     //Test Purpose: This is an instructor example test to demonstrate testing for an exception.
     @Test(expected = NullPointerException.class)
     public void testFlipLetttersInSubstring2() {
@@ -202,5 +201,5 @@ public class MyCustomStringTest {
         
         fail("Not yet implemented");
     }
-
+    **/
 }
